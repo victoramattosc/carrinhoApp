@@ -13,12 +13,12 @@ export default function Carrinho(){
         <View  style={styles.carrinho}>
           <Text style={styles.nome}>Carrinho de Compras</Text>
           <View style={styles.fazenda}>
-            <Image source={logo}/>
-          <Text>Fazenda Etec Cidade do Livro</Text>
+            <Image source={logo} style={styles.imgfazenda}/>
+          <Text style={styles.nomefazenda}>Fazenda Etec Cidade do Livro</Text>
           </View>
-          <Text>Carrinho de Compras</Text>
-          <Text>Uma cesta com produtos selecionados cuidadosamente da fazenda direto para a sua cozinha</Text>
-          <Text>R$40,00</Text>
+
+          <Text style={styles.descricao}>Uma cesta com produtos selecionados cuidadosamente da fazenda direto para a sua cozinha</Text>
+          <Text style={styles.preco}>R$40,00</Text>
         </View>
       </>
 
@@ -53,5 +53,25 @@ const styles = StyleSheet.create({
   fazenda: {
     flexDirection: 'row',
     paddingVertical: 12
+  },
+  imgfazenda: {
+    width: 32,
+    height: 32,
+  },
+  nomefazenda: {
+    fontSize: 16,
+    fontFamily: 'MBold',
+    lineHeight: 26,
+    marginLeft: 12
+  },
+  descricao: {
+    color: '#A3A3A3',
+    fontFamily: 'MItalic'
+  },
+  preco: {
+    fontSize: 26,
+    fontFamily: 'MRegular',
+    color: '#2A9F85',
+    marginTop: 8
   }
 });
