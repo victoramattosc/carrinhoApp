@@ -4,21 +4,27 @@ import logo from "../../../../assets/logo.png";
 
 const width = Dimensions.get("screen").width;
 
-export default function Detalhe() {
+type Props = {
+  nome: string,
+  nomeFazenda: string,
+  descricao: string,
+  preco: string
+}
+
+export default function Detalhe({nome, nomeFazenda, descricao, preco}: Props) {
   return (
     <>
       <Text style={styles.nome}>Carrinho de Compras</Text>
 
       <View style={styles.fazenda}>
         <Image source={logo} style={styles.imagemfazenda} />
-        <Text style={styles.nomefazenda}>Fazenda Etec Cidade do Livro</Text>
+        <Text style={styles.nomefazenda}>{nomeFazenda}</Text>
       </View>
 
       <Text style={styles.descricao}>
-        Uma cesta com produtos selecionados cuidadosamente da fazenda direto
-        para a sua cozinha.
+        {descricao}
       </Text>
-      <Text style={styles.preco}>R$ 40,00</Text>
+      <Text style={styles.preco}>{preco}</Text>
     </>
   );
 }
@@ -56,3 +62,4 @@ const styles = StyleSheet.create({
       marginTop: 8,
     },
   });
+  

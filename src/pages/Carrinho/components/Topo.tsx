@@ -1,24 +1,33 @@
-import React from "react";
-import { Text, View, StyleSheet, Image, Dimensions } from "react-native";
-import Detalhe from "./components/Detalhe";
-import Topo from "./components/Topo";
+import React from 'react';
+import {Image, Text, StyleSheet, Dimensions } from "react-native";
+import topo from '../../../../assets/topo.png';
 
-const width = Dimensions.get("screen").width;
+const width = Dimensions.get('screen').width;
 
-export default function Carrinho() {
-  return (
-    <>
-      <Topo />
-      <View style={styles.carrinho}>
-        <Detalhe/>
-      </View>
+type Props ={
+    titulo: string
+}
+
+export default function Topo({titulo}: Props){
+    return <>
+    <Image source={topo} style={styles.topo}/>
+         <Text style={styles.titulo}>{titulo}</Text>
     </>
-  );
 }
 
 const styles = StyleSheet.create({
-  carrinho: {
-    paddingVertical: 8,
-    paddingHorizontal: 16,
-  }
+    topo:{
+        width: '100%',  
+        height: 578 / 786 * width,
+    },
+    titulo:{
+      width: '100%',
+      position: 'absolute',
+      color: 'white',
+      textAlign: 'center',
+      fontSize: 24,
+      lineHeight: 26,
+      padding: 16,
+      fontFamily: 'MontserratBold'
+    },
 });
